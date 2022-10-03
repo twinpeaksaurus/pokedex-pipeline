@@ -35,5 +35,7 @@ jobs:
           heroku_app_name: "jam-pokedex" #Must be unique in Heroku
           heroku_email: "jmogavero2@gmail.com"
           healthcheck: "https://jam-pokedex.herokuapp.com/health"
+        if: ${{ github.event_name == 'push' }}
+
 
 #added to add PR
