@@ -24,7 +24,7 @@ jobs:
         with:
           command: npm run test:e2e
           start: npm run start-prod
-          wait-on: http://localhost:5000
+          wait-on: http://localhost:5000 
   heroku_deploy:
     runs-on: ubuntu-20.04
     steps:
@@ -35,4 +35,7 @@ jobs:
           heroku_app_name: "jam-pokedex" #Must be unique in Heroku
           heroku_email: "jmogavero2@gmail.com"
           healthcheck: "https://jam-pokedex.herokuapp.com/health"
+        if: ${{ github.event_name == 'push' }}
 
+
+#added to add PR
